@@ -559,9 +559,16 @@ let g:debuggerMiniBufExpl = 1
 
 " Powerline                                                    {{{2
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-let g:Powerline_theme = 'distinguished'
-let g:Powerline_symbols = 'fancy'
-let g:Powerline_stl_path_style = 'filename'
+"set rtp+=/Users/davidb/src/powerline/powerline/bindings/vim
+"
+"let g:Powerline_theme = 'distinguished'
+"let g:Powerline_symbols = 'fancy'
+"let g:Powerline_stl_path_style = 'filename'
+
+" airline                                                       {{{2
+" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+let g:airline_powerline_fonts = 1
+"let g:airline#extensions#tabline#enabled = 1
 
 " syntastic                                                    {{{2
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
