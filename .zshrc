@@ -204,6 +204,10 @@ source ~/.zshextras
 #[[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 #[[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
 
+function pbcopy() {
+    nc localhost 2224
+}
+
 # borrowed from https://github.com/rampion/rc-files
 # if using GNU screen, let the zsh tell screen what the title and hardstatus
 # of the tab window should be.
