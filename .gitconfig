@@ -36,3 +36,5 @@
     rh = reset --hard remotes/trunk
 [credential]
 	helper = osxkeychain
+[diff]
+	algorithm = patience
