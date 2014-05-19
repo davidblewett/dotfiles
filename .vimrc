@@ -762,6 +762,10 @@ vnoremap <A-v> "+gp"
 
 " Visually select the text that was last edited/pasted
 nmap gV `[v`]
+
+" 
+nnoremap  <silent>   <tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bnext<CR>
+nnoremap  <silent> <s-tab>  :if &modifiable && !&readonly && &modified <CR> :write<CR> :endif<CR>:bprevious<CR>
 "
 " turn on folds
 " vim: fdm=marker
