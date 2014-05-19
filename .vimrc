@@ -189,7 +189,7 @@ command! -nargs=0 PBCopy call PBCopy(@")
 
 function! PBCopy(text)
     silent !clear
-    silent execute '!echo ' . shellescape(a:text, 1) . ' | pbcopy'
+    silent execute '!printf "\%s" ' . shellescape(a:text, 1) . ' | pbcopy'
     silent execute ':redraw!'
 endfunction
 
