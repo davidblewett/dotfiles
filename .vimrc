@@ -185,6 +185,7 @@ map <silent> <leader>\ :set wrap!<CR>
 " turn off smart indentation when pasting
 set pastetoggle=<F2>
 "set clipboard+=unnamed  " use the clipboards of vim and win
+set clipboard=unnamed,unnamedplus
 command! -nargs=0 PBCopy call PBCopy(@")
 
 function! PBCopy(text)
