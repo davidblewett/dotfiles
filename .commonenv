@@ -16,6 +16,7 @@ export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
 new_path=""
 expected_path=(
   "$HOME/bin/$MACHTYPE-$OSTYPE"
+  "$HOME/.cargo/bin"
   "$HOME/bin"
   "$HOME/bin/git_achievements"
   "$HOME/.gem/ruby/1.8/bin"
@@ -72,6 +73,7 @@ expected_path=(
   /Applications/SenchaSDKTools-2.0.0-beta3
   /Applications/SenchaSDKTools-2.0.0-beta3/bin
   /Users/davidb/node_modules/bin
+  $HOME/.virtualenvs/utils/bin
 )
 
 for element in "${expected_path[@]}"
