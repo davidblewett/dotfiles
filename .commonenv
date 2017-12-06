@@ -20,6 +20,7 @@ expected_path=(
   "$HOME/bin"
   "$HOME/bin/git_achievements"
   "$HOME/.gem/ruby/1.8/bin"
+  "$HOME/.cargo/bin"
   /opt/local/apache2/bin
   /opt/python/bin
   /opt/python-build/python-2.7/bin
@@ -73,7 +74,7 @@ expected_path=(
   /Applications/SenchaSDKTools-2.0.0-beta3
   /Applications/SenchaSDKTools-2.0.0-beta3/bin
   /Users/davidb/node_modules/bin
-  $HOME/.virtualenvs/utils/bin
+  "$HOME/.virtualenvs/utils/bin"
 )
 
 for element in "${expected_path[@]}"
