@@ -1,6 +1,6 @@
 UNAME=$(uname)
 source $HOME/.commonfuncs
-source ~/bin/tmuxinator.zsh
+#source ~/bin/tmuxinator.zsh
 # Common hashes
 hash -d L=/var/log
 hash -d R=/usr/local/etc/rc.d

@@ -1,13 +1,21 @@
 UNAME=$(uname)
 source $HOME/.commonfuncs
+#source /usr/local/bin/pyenv-sh-virtualenvwrapper
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.7
 export LANG=en_US.UTF-8
 export PAGER=less
 export LESS="-iRMSx4 -FX"
 #export MANPATH=`manpath`
 #export RSYNC_ICONV=UTF8-MAC
 export RSYNC_PASSWORD=ruby
-export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/CurrentJDK/Home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
 export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
+export KUBECONFIG=~/.kube/prod-us-west-1.kubeconfig:~/.kube/np-us-west-1.kubeconfig
+export GOPATH=~/go
+export LDFLAGS="-L/usr/local/opt/openssl/lib $LDFLAGS"
+export CPPFLAGS="-I/usr/local/opt/openssl/include $CPPFLAGS"
+export PKG_CONFIG_PATH="/usr/local/opt/openssl/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 # let's set a proper PATH
 #########################
 
@@ -15,12 +23,13 @@ export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
 # like the one in .zshenv
 new_path=""
 expected_path=(
+  /usr/local/opt/python/libexec/bin
+  "$HOME/.pyenv/shims"
   "$HOME/bin/$MACHTYPE-$OSTYPE"
   "$HOME/.cargo/bin"
   "$HOME/bin"
   "$HOME/bin/git_achievements"
   "$HOME/.gem/ruby/1.8/bin"
-  "$HOME/.cargo/bin"
   /opt/local/apache2/bin
   /opt/python/bin
   /opt/python-build/python-2.7/bin
@@ -74,7 +83,10 @@ expected_path=(
   /Applications/SenchaSDKTools-2.0.0-beta3
   /Applications/SenchaSDKTools-2.0.0-beta3/bin
   /Users/davidb/node_modules/bin
-  "$HOME/.virtualenvs/utils/bin"
+  /usr/local/opt/python/libexec/bin
+  #"$HOME/.virtualenvs/utils/bin"
+  "$HOME/Library/Python/3.7/bin"
+  "$HOME/simple/postgres/scripts"
 )
 
 for element in "${expected_path[@]}"

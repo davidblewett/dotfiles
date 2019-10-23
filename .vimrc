@@ -102,6 +102,7 @@ if has('mouse')
     set mouse=a
     " make a menu popup on right click
     set mousemodel=popup
+    set ttymouse=sgr
 endif
 
 " allow for switching buffers when a file has changes
