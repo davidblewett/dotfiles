@@ -109,9 +109,6 @@ export PATH
 #   * show colors instead of escape characters (-R)
 #export LESS="-IMRR"
 
-# use the SFU package server for FreeBSD
-#export PACKAGESITE=http://sfuppkg01.sixfeetup.com/FreeBSD/8.0/packages/All/
-
 # conditionally set the editor variable
 #if checkPath mate_wait; then
     # to set this up you need to symlink the mate command
@@ -131,8 +128,6 @@ export EDITOR=vim
 # prefer to use distribute for virtualenvs
 export VIRTUALENV_USE_DISTRIBUTE="TRUE"
 
-# add our public repo to the pip find links
-export PIP_FIND_LINKS="http://dist.sixfeetup.com/public/"
 export PIP_DOWNLOAD_CACHE="$HOME/.pip_download_cache"
 
 # set up some more OS X specific stuff
