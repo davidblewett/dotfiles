@@ -3,6 +3,10 @@ source $HOME/.commonfuncs
 
 # re link all the conf files
 alias qs='~/.dotfiles/create_links.sh'
+alias k="kubectl"
+alias kns="kubectl ns"
+alias kctx="kubectl ctx"
+alias kdmc='dmc -ssh=kdmcshell'
 
 # prefer vim over vi
 if checkPath vim; then
@@ -46,6 +50,8 @@ fi
 alias psa='ps axwww'
 # grep through processes
 alias psg='psa | grep -i'
+
+alias k='kubectl'
 
 # svn helpers
 #############

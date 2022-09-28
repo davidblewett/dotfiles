@@ -1,4 +1,5 @@
 source $HOME/.commonfuncs
+source $HOME/.iterm2_shell_integration.zsh
 
 # run the fortune function....and...laugh
 #makeMeLaugh

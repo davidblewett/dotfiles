@@ -63,3 +63,4 @@ rationalize-path fpath
 
 # extra per environment settings
 source $HOME/.zshenv_extras
+. "$HOME/.cargo/env"

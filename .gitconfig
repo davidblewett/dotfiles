@@ -1,6 +1,7 @@
 [core]
 	excludesfile = ~/.gitignore
     whitespace=fix,-indent-with-non-tab,trailing-space,cr-at-eol
+	hooksPath = /usr/local/dd/global_hooks
 [github]
 	user = YOUR_GITHUB_USERNAME
 	token = YOUR_TOKEN_HERE

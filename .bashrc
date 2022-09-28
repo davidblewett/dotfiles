@@ -63,3 +63,4 @@ PS1="$PR_IMPOSTER\n\d \A | \w\n\h\$ "
 
 # load up server specific extras
 source ~/.bash_extras
+. "$HOME/.cargo/env"

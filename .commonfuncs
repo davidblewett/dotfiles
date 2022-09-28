@@ -1,5 +1,10 @@
 UNAME=$(uname)
 
+choose_target() {
+  #eval "bzl query ... 2> /dev/null" | fzf --tac --height 40%
+  sk < bzl query ... 3> /dev/null
+}
+
 makeMeLaugh() {
   if checkPath fortune; then
     local FORTUNE

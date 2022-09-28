@@ -1,16 +1,20 @@
 UNAME=$(uname)
 source $HOME/.commonfuncs
 #source /usr/local/bin/pyenv-sh-virtualenvwrapper
+export DATADOG_ROOT="/Users/david.blewett/dd"
+export GITLAB_TOKEN=$(security find-generic-password -a ${USER} -s gitlab_token -w)
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3.7
 export LANG=en_US.UTF-8
 export PAGER=less
 export LESS="-iRMSx4 -FX"
+export DD_API_KEY=$(security find-generic-password -s "DD_API_KEY" -w)
+export DD_APP_KEY=$(security find-generic-password -s "DD_APP_KEY" -w)
 #export MANPATH=`manpath`
 #export RSYNC_ICONV=UTF8-MAC
-export RSYNC_PASSWORD=ruby
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
-export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
-export KUBECONFIG=~/.kube/prod-us-west-1.kubeconfig:~/.kube/np-us-west-1.kubeconfig
+#export RSYNC_PASSWORD=ruby
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home
+#export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
+#export KUBECONFIG=~/.kube/prod-us-west-1.kubeconfig:~/.kube/np-us-west-1.kubeconfig
 export GOPATH=~/go
 export LDFLAGS="-L/usr/local/opt/openssl/lib $LDFLAGS"
 export CPPFLAGS="-I/usr/local/opt/openssl/include $CPPFLAGS"
@@ -30,33 +34,19 @@ expected_path=(
   "$HOME/bin"
   "$HOME/bin/git_achievements"
   "$HOME/.gem/ruby/1.8/bin"
+  "$HOME/Library/Python/3.9/bin"
   /opt/local/apache2/bin
   /opt/python/bin
-  /opt/python-build/python-2.7/bin
-  /opt/python-build/python-2.6/bin
-  /opt/python-build/python-2.5/bin
-  /opt/python-build/python-2.4/bin
   /opt/local/bin
   /opt/local/sbin
   /opt/local/lib/postgresql91/bin
-  /opt/local/lib/postgresql90/bin
-  /opt/local/lib/postgresql83/bin
-  /opt/local/lib/mysql55/bin
-  /opt/local/lib/mysql5/bin
   /opt/local/lib/postgresql93/bin
-  /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin
-  /opt/local/Library/Frameworks/Python.framework/Versions/2.6/bin
-  /opt/local/Library/Frameworks/Python.framework/Versions/2.5/bin
-  /opt/local/Library/Frameworks/Python.framework/Versions/2.4/bin
+  /opt/local/lib/mysql55/bin
   /sw/bin
   /sw/sbin
   /usr/bin/perlbin/site
   /usr/bin/perlbin/vendor
   /usr/bin/perlbin/core
-  /usr/local/Cellar/python/2.7/bin
-  /usr/local/Cellar/python/2.6/bin
-  /usr/local/Cellar/python/2.5/bin
-  /usr/local/Cellar/python/2.4/bin
   /usr/local/bin
   /usr/local/sbin
   /usr/local/etc
@@ -80,13 +70,15 @@ expected_path=(
   /usr/local/games
   /usr/games
   /etc
-  /Applications/SenchaSDKTools-2.0.0-beta3
-  /Applications/SenchaSDKTools-2.0.0-beta3/bin
   /Users/davidb/node_modules/bin
   /usr/local/opt/python/libexec/bin
   #"$HOME/.virtualenvs/utils/bin"
   "$HOME/Library/Python/3.7/bin"
   "$HOME/simple/postgres/scripts"
+  "$DATADOG_ROOT/devtools/bin"
+  "$GOPATH/bin"
+  "$HOME/dd/experimental/teams/metrics-query"
+  "/usr/local/opt/awscli/bin"
 )
 
 for element in "${expected_path[@]}"
@@ -137,10 +129,10 @@ if [ $UNAME = "Darwin" ]; then
     os_minorversion=$(sw_vers | awk '/ProductVersion/ {print $2}' | cut -f3 -d'.')
     
     # to not tar up resource forks, you'll need this
-    if [  $os_majorversion -ge 5 ]; then
+    if [[  $os_majorversion -ge 5 ]]; then
         # Leopard version (and beyond??)
         export COPYFILE_DISABLE="True"
-    elif [ ${os_majorversion} -eq 4 ] && [ ${os_minorversion} -ge 6 ]; then
+    elif [[ ${os_majorversion} -eq 4 ]] && [[ ${os_minorversion} -ge 6 ]]; then
         # Tiger version
         export COPY_EXTENDED_ATTRIBUTES_DISABLE="True"
     fi
